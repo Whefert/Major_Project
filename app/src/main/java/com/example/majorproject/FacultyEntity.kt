@@ -8,5 +8,5 @@ data class FacultyEntity(
     val title: String,
     val image:Int,
     val telephoneNumber:String,
-    val email: Email,
+    val email: String,
 )

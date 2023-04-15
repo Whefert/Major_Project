@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FacultyStaffDirectory">
+    tools:context=".FacultyDirectory">
 
 
     <TextView
@@ -22,6 +22,8 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_faculty"
+        tools:listitem="@layout/activity_faculty_row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"

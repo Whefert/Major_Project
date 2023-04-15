@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/llCourse"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@drawable/default_option_border_bg"
@@ -11,24 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:gravity="center_horizontal"
+        android:gravity="left"
         android:padding="10dp"
         >
 
         <TextView
+            android:id="@+id/tv_courseNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:gravity=""
-            android:layout_weight="1"
-            tools:text="Course Number" />
+            tools:text="Course Number"/>
 
         <TextView
+            android:id="@+id/tv_courseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:layout_weight="3"
+            android:paddingLeft="10dp"
             android:textSize="18sp"
             tools:text="Course Name" />
 
@@ -40,6 +41,7 @@
         android:padding="10dp">
 
         <TextView
+            android:id="@+id/tv_courseDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"

@@ -4,11 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
+    android:paddingTop="100dp"
     android:orientation="vertical"
     android:background="@drawable/main_activity_bg"
     tools:context=".MainActivity">
-    
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +24,7 @@
         tools:text="IT Department App"
         android:textColor="@color/white"
         android:gravity="center"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_margin="20dp"
 
@@ -63,39 +67,17 @@
         android:padding="20dp"        />
 <!--        android:background=""-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Social Media"
-        android:background="@drawable/default_option_border_bg"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:padding="20dp"        />
-<!--        android:background=""-->
-
-    <TextView
-        android:id="@+id/tv_contactEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contact us via email"
-        android:background="@drawable/default_option_border_bg"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:padding="20dp"        />
-<!--        android:background=""-->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:layout_marginTop="20dp"
 
         >
         <TextView
-            android:id="tv_followUs"
+            android:id="@+id/tv_followUs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Follow Us: "
@@ -114,22 +96,28 @@
             >
 
             <ImageView
+                android:id="@+id/ivInstagram"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:src="@drawable/ucc_logo" />
+                android:clickable="true"
+                android:src="@drawable/instagram_logo" />
 
             <ImageView
+                android:id="@+id/ivFacebook"
             android:layout_width="wrap_content"
-                android:layout_height="40dp"
-            android:src="@drawable/ucc_logo"
+            android:layout_height="40dp"
+            android:src="@drawable/facebook_logo"
+            android:clickable="true"
             android:layout_weight="1"
             />
 
             <ImageView
+                android:id="@+id/ivTwitter"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:src="@drawable/ucc_logo"
+                android:src="@drawable/twitter_logo"
+                android:clickable="true"
                 android:layout_weight="1"
                 />
 
@@ -137,4 +125,30 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_gravity="end"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/emailFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundGravity=""
+            android:tint="@color/ucc_yellow"
+            android:src="@drawable/baseline_email_24"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:contentDescription="send email"
+            />
+
+    </LinearLayout>
+
+    
 </LinearLayout>
+
+
+
