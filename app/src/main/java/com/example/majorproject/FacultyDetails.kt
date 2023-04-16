@@ -2,12 +2,13 @@ package com.example.majorproject
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 
 class FacultyDetails : AppCompatActivity() {
@@ -23,6 +24,11 @@ class FacultyDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_faculty_details)
+
+        var myToolBar: Toolbar = findViewById(R.id.myToolbar)
+        setSupportActionBar(myToolBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title="Faculty Details"
 
         val listPosition = intent.getStringExtra("position")!!.toInt()
         val faculty = FacultyList.facultyList[listPosition]
@@ -43,7 +49,8 @@ class FacultyDetails : AppCompatActivity() {
 
         llPhoneNumber?.setOnClickListener {
 
-
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + faculty.telephoneNumber))
+            startActivity(intent)
         }
 
         llEmailAddress?.setOnClickListener {

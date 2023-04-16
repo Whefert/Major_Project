@@ -9,9 +9,7 @@
     android:background="@drawable/main_activity_bg"
     tools:context=".MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 
     <ImageView
         android:layout_width="match_parent"
@@ -129,21 +127,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="right"
-        android:layout_gravity="end"
+        android:gravity="center"
+            android:layout_marginTop="60dp"
+
         >
+        <!--        android:layout_marginRight="40dp"-->
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/emailFab"
+            android:id="@+id/fab_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundGravity=""
             android:tint="@color/ucc_yellow"
             android:src="@drawable/baseline_email_24"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="40dp"
             android:contentDescription="send email"
             />
+<!--            android:layout_marginTop="60dp"-->
+
+        <!--            android:layout_marginRight="40dp"-->
+
 
     </LinearLayout>
 

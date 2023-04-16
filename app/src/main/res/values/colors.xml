@@ -10,4 +10,5 @@
     <color name="ucc_yellow">#F9D209</color>
     <color name="ucc_blue">#6269F2</color>
     <color name="ucc_blue_highlight">#81E6EB</color>
+    <color name="hyperlink_color">#1D25BD</color>
 </resources>

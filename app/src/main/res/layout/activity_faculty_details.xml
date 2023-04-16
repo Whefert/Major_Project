@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FacultyDetails"
-    android:gravity="center_vertical"
+    android:gravity="fill_vertical"
     android:orientation="vertical"
     >
 
+    <include layout="@layout/custom_toolbar"/>
     <ImageView
         android:id="@+id/iv_facultyImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="15dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
         tools:src="@drawable/ucc_logo"
         />
 

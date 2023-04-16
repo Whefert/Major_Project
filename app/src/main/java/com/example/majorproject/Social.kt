@@ -12,6 +12,7 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat.startActivity
 
 
@@ -20,7 +21,14 @@ class Social : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_social)
 
+        var myToolBar: Toolbar = findViewById(R.id.myToolbar)
+        setSupportActionBar(myToolBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
         val platform = intent.getStringExtra("platform")
+
+        supportActionBar?.title="$platform Page"
         val web: WebView = findViewById(R.id.wvSocial)
         web.webViewClient = CustomWebViewClient(this)
 
@@ -32,6 +40,8 @@ class Social : AppCompatActivity() {
             "Instagram"-> web.loadUrl("https://www.instagram.com/uccjamaica")
             "Twitter"-> web.loadUrl("https://twitter.com/UCCjamaica")
         }
+
+
     }
 }
 

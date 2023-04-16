@@ -1,14 +1,18 @@
 package com.example.majorproject
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.majorproject.databinding.ActivityCoursesBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class Courses : AppCompatActivity() {
     var binding: ActivityCoursesBinding?= null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,11 +26,16 @@ class Courses : AppCompatActivity() {
         binding?.rvCourses?.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
         binding?.rvCourses?.adapter = adapter
+
+        var myToolBar: Toolbar = findViewById(R.id.myToolbar)
+        setSupportActionBar(myToolBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    fun getCourseDetails(courseId: String){
+
+    fun getCourseDetails(position: String){
         val myIntent = Intent(this,CourseDetails::class.java)
-        myIntent.putExtra("courseId", courseId)
+        myIntent.putExtra("position", position)
         startActivity(myIntent)
     }
 

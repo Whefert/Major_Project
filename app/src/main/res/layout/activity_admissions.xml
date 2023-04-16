@@ -8,18 +8,19 @@
     android:orientation="vertical"
     >
 
+    <include layout="@layout/custom_toolbar"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:text="Admissions"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:paddingTop="70dp"
-        android:paddingBottom="70dp"
-        android:textColor="@color/white"
         android:background="@color/ucc_blue"
-        />
+        android:gravity="center"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:text="Admissions"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,20 +57,11 @@
             />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Apply here:"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:layout_marginTop="10dp"
-            />
-        <TextView
             android:id="@+id/tv_admissionsPageLink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/admissionsPageHyperlink"
-            android:textColor="@color/black"
+            android:textColorLink="@color/hyperlink_color"
             android:textSize="14sp"
             android:layout_marginTop="10dp"
             />

@@ -32,7 +32,7 @@ class CoursesAdapter (private val courseList: List<CourseEntity>,
         val course = courseList[position]
         holder.bindItem(course)
         holder.llCourse.setOnClickListener {
-            getDetails.invoke(course.id)
+            getDetails.invoke(position.toString())
         }
 
     }

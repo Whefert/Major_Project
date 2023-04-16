@@ -1,10 +1,17 @@
 package com.example.majorproject
 
+import android.content.ContentValues
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +20,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val tvFacultyStaff: TextView = findViewById<TextView>(R.id.tv_facultyStaff)
+        getCourses(CourseList.courseList)
+
+        val fabEmail: FloatingActionButton = findViewById(R.id.fab_email)
+        fabEmail.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","ithod@ucc.edu.jm" , null))
+            startActivity(intent)
+        }
+         val tvFacultyStaff: TextView = findViewById<TextView>(R.id.tv_facultyStaff)
         tvFacultyStaff.setOnClickListener{
             val intent =  Intent(this,FacultyDirectory::class.java)
             startActivity(intent)
@@ -53,6 +67,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
     }
 
+}
+
+fun getCourses(courseList: ArrayList<CourseEntity>){
+    val db = Firebase.firestore
+    db.collection("courses")
+        .get()
+        .addOnSuccessListener { result ->
+            courseList.clear()
+            for (data in result) {
+                val course:CourseEntity? = data.toObject(CourseEntity::class.java)
+                if(course!= null){
+                    courseList.add(course)
+                }
+                Log.d(ContentValues.TAG, "Document found${data.id} => ${data.data}")
+            }
+        }
+        .addOnFailureListener { exception ->
+            Log.w(ContentValues.TAG, "Error getting documents.", exception)
+        }
 }

@@ -8,6 +8,8 @@
     android:orientation="vertical"
     >
 
+    <include layout="@layout/custom_toolbar"/>
+
     <WebView
         android:id="@+id/wvSocial"
         android:layout_width="409dp"

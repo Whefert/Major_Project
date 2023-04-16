@@ -8,6 +8,8 @@
     tools:context=".CourseDetails">
 
 
+    <include layout="@layout/custom_toolbar"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,8 +70,7 @@
         android:textSize="14sp"
         android:paddingHorizontal="50dp"
         android:text="@string/loremIpsum"
-        android:textAlignment="viewStart"
-        android:gravity="center"
+        android:gravity="left"
         android:textColor="@color/black"
         />
 
